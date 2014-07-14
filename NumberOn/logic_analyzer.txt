@@ -1,0 +1,54 @@
+### Analyzer logic ###
+
+ - check equals for same digits
+
+    185 vs 381
+
+    [1] equals [3] ?  ->  false
+    [8] equals [8] ?  ->  true
+    [5] equals [1] ?  ->  false
+
+ - count [true] as "EAT"
+
+    EAT = 1
+
+ - delete "EAT"
+
+    [185]  ->  [15]
+    [381]  ->  [31]
+
+ - check contain
+
+    [15] contains [3] ?  ->  false
+    [15] contains [1] ?  ->  true
+
+ - count [true] as "BITE"
+
+    BITE = 1
+
+ - result
+
+    185 vs 381  ->  1EAT, 1BITE
+
+
+ - another example
+
+    118 vs 111  ->  2EAT
+    
+      [1] equals [1] ?  ->  true
+      [1] equals [1] ?  ->  true
+      [8] equals [1] ?  ->  false
+
+      [8] contains [1] ?  -> false
+
+
+    118 vs 121  ->  1EAT, 1BITE
+
+      [1] equals [1] ?  ->  true
+      [1] equals [2] ?  ->  false
+      [8] equals [1] ?  ->  false
+
+      [18] contains [2] ?  -> false
+      [18] contains [1] ?  -> true
+
+end
